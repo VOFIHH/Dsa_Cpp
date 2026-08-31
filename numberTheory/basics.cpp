@@ -74,7 +74,7 @@ bool isprime(ull n){ // a^d - 1 = 0   or a^2rd + 1 = 0 (mod n) ,r-> (0 , s-1]
 
 
 template<typename  T> 
-T modinv ( T a , const T m ){ 
+T modinv ( T a , const T m ){  // gcd(a,m) should be 1 
     if(isprime(a)) return binpow(a,m-2,m);
     T x ,y ;
     T g = ex_gcd(a , m, x , y);
@@ -87,11 +87,23 @@ bool hassolution(T a , T b ,T c){
     // to make the logic the roots are in the form x - bt/g and y + at/g
     // so every equation or inequality become a solving for 't' problem
     // T x ,T y ;
-    // ex_gcd(a , b ,x ,y);
+    // ex_gcd(a,b,x,y);
     // x*=c/g
     // y*=c/g
     return (c % gcd(a,b) == 0); 
     
+} 
+
+int32_t main(){
+    
+    // gcd(6,5)= 1
+    cout << modinv(6,5) << '\n'; 
+    // gcd(6,9)=3 
+    cout << modinv(6,9) << '\n'; 
+    int a , b ;
+    // 6x = 1 mod 5 , 6x = 5k + 1 6x + 5(-k) = 1 x and -k are integers only when gcd(5,6) = 1 and x will be 6^-1
+    ex_gcd(6,5,a,b) ; 
+
 }
     
     
