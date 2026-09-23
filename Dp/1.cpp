@@ -3,8 +3,10 @@
 using namespace std;
 typedef long long ll; 
 
-//   cses DP - 1 
-/*
+ 
+/*   
+ *     CSES - DP_1
+ *
  *   if we want sum x 
  *   we can have that sum from x - 1 , x -2 , x -3 ,x - 4 , x - 5, x -6 
  *
